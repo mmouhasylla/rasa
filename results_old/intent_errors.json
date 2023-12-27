@@ -1,0 +1,90 @@
+[
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6189137101173401
+    }
+  },
+  {
+    "text": "good",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.4078141748905182
+    }
+  },
+  {
+    "text": "thank you",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9594895243644714
+    }
+  },
+  {
+    "text": "thanks",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.854242205619812
+    }
+  },
+  {
+    "text": "thanks a lot",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.674484372138977
+    }
+  },
+  {
+    "text": "many thanks",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.8629069924354553
+    }
+  },
+  {
+    "text": "thx",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.7668221592903137
+    }
+  },
+  {
+    "text": "thanks mate",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9516721963882446
+    }
+  },
+  {
+    "text": "thanks dude",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9752572774887085
+    }
+  },
+  {
+    "text": "thanks man",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.8970781564712524
+    }
+  },
+  {
+    "text": "fine thanks",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9673861861228943
+    }
+  }
+]

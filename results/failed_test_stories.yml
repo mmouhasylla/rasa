@@ -1,0 +1,91 @@
+version: "2.0"
+stories:
+- story: sad path 5 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: thank_you
+  - action: utter_welcome
+  - intent: goodbye  # predicted: lets_talk: talk to you later
+  - action: utter_goodbye
+- story: change image (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: change_image
+    entities:
+    - animal: dog
+    - animal: dog
+  - slot_was_set:
+    - animal: dog
+  - slot_was_set:
+    - animal: dog
+  - action: action_show_image
+  - intent: goodbye
+  - action: utter_goodbye
+- story: ask favorite animal (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: lets_talk
+  - action: utter_favorite_animal
+  - intent: favorite_animal
+    entities:
+    - animal: cat
+  - slot_was_set:
+    - animal: cat
+  - slot_was_set:
+    - animal: cat
+  - action: action_favorite_animal
+  - intent: thank_you
+  - action: utter_welcome
+  - intent: goodbye  # predicted: lets_talk: talk to you later
+  - action: utter_goodbye
+- story: ask favorite animal 2 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: lets_talk
+  - action: utter_favorite_animal
+  - intent: favorite_animal
+    entities:
+    - animal: horse
+  - slot_was_set:
+    - animal: horse
+  - slot_was_set:
+    - animal: horse
+  - action: action_favorite_animal
+  - intent: thank_you
+  - action: utter_welcome
+  - intent: goodbye  # predicted: lets_talk: talk to you later
+  - action: utter_goodbye
+- story: sad path 2 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye  # predicted: utter_sorry
+- story: sad path 3 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye  # predicted: utter_sorry

@@ -1,0 +1,6 @@
+[
+    {
+        "name": "animal",
+        "pattern": "(\\bpuppy\\b|\\bbutterflies\\b|\\bkangaroo\\b|\\belephant\\b|\\bturtle\\b|\\bgiraffe\\b|\\bgirafe\\b|\\bpanda\\b|\\bcat\\b|\\bhorse\\b)"
+    }
+]

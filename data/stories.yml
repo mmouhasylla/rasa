@@ -1,0 +1,193 @@
+version: "2.0"
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: sad path 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+
+- story: Story from Conversation ID 2d6459e0614f458a867c4f188241851e
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Story from Conversation ID 1951acca91f14ccbb84cfaa765b68fc3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+  - intent: thank_you
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Story from Conversation ID 3667d3005632468d86f536995f4bb0af
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: deny
+  - action: utter_sorry
+
+- story: saying welcome
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: thank_you
+  - action: utter_welcome
+
+- story: ask favorite animal
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: lets_talk
+  - action: utter_favorite_animal
+  - intent: favorite_animal
+    entities:
+    - animal: cat
+  - slot_was_set:
+    - animal: cats
+  - action: action_favorite_animal
+  - intent: thank_you
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: asking favorite animal synonym
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: lets_talk
+  - action: utter_favorite_animal
+  - intent: favorite_animal
+    entities:
+    - animal: cat
+  - slot_was_set:
+    - animal: kittens
+  - action: action_favorite_animal
+  - intent: another_animal
+  - slot_was_set:
+    - animal: cat
+  - action: action_random_image
+
+- story: sad moment
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+
+- story: Story from Conversation ID 5ad648db7a154880a4c890c3ba3e2d3c
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: change_image
+    entities:
+    - animal: koala
+  - slot_was_set:
+    - animal: koala
+  - action: action_show_image
+  - intent: affirm
+  - action: utter_happy
+
+- story: ask favorite animal 2 synonym
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: lets_talk
+  - action: utter_favorite_animal
+  - intent: favorite_animal
+    entities:
+    - animal: dog
+  - slot_was_set:
+    - animal: puppy
+  - action: action_favorite_animal
+  - intent: thank_you
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: change image 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: change_image
+  - slot_was_set:
+    - animal: horse
+  - action: action_show_image
+  - intent: affirm
+  - intent: utter_happy
+
+- story: change image 3
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - intent: change_image
+    - slot_was_set:
+      - animal: koala
+    - action: action_show_image
+    - intent: affirm
+    - action: utter_happy
+    - intent: goodbye
+    - action: utter_goodbye

@@ -1,0 +1,40 @@
+[
+  {
+    "text": "i would like to see a kitty",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "animal",
+        "start": 22,
+        "end": 27,
+        "confidence_entity": 0.7687544226646423,
+        "value": "cat",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "i would like to see a girafe",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "animal",
+        "start": 22,
+        "end": 28,
+        "confidence_entity": 0.5275423526763916,
+        "value": "girafe",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "animal",
+        "start": 22,
+        "end": 28,
+        "value": "girafe",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  }
+]

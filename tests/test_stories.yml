@@ -1,0 +1,386 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+
+- story: bot challenge 1
+  steps:
+  - user: |
+      am I talking to a bot or a human?
+    intent: bot_challenge
+  - action: utter_iamabot
+
+- story: bot challenge 2
+  steps:
+  - user: |
+      who am I talking to?
+    intent: bot_challenge
+  - action: utter_iamabot
+
+- story: bot challenge 3
+  steps:
+  - user: |
+      are you a bot?
+    intent: bot_challenge
+  - action: utter_iamabot
+
+- story: happy path 1
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+
+- story: happy path 2
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: sad path 1
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      yes
+    intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      not really
+    intent: deny
+  - action: utter_goodbye
+
+- story: sad path 3
+  steps:
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      very terrible
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      no
+    intent: deny
+  - action: utter_goodbye
+
+- story: sad path 4
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      I am not doing well
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      nope
+    intent: deny
+  - action: utter_sorry
+  - user: | 
+      bye
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: sad path 5
+  steps:
+  - user: |
+      hey what's up
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not so good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      yes it did
+    intent: affirm
+  - action: utter_happy
+  - user: |
+      thanks
+    intent: thank_you
+  - action: utter_welcome
+  - user: |
+      talk to you later
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: say goodbye
+  steps:
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: say goodbye 2
+  steps:
+  - user: |
+      talk to you next time
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: change image
+  steps:
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      I'm sad
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      I want to see a [puppy]{"entity": "animal", "value": "dog"}
+    entities:
+    - animal: dog
+    intent: change_image
+  - slot_was_set:
+    - animal: dog
+  - action: action_show_image
+  - user: |
+      bye bye
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: ask_anotherimage
+  steps:
+  - user: |
+      hey what's up
+    intent: greet
+  - action: utter_greet
+  - user: |
+      awful
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      I want to see another animal
+    intent: another_animal
+  - action: action_random_image
+  - user: |
+      no
+    intent: deny
+  - action: utter_sorry
+  - user: |
+      bye
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: change image 2
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not so good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      can you show me a [koala]{"entity": "animal", "value": "koala"}
+    entities:
+    - animal: koala
+    intent: change_image
+  - slot_was_set:
+    - animal: koala
+  - action: action_show_image
+  - user: |
+      yes
+    intent: affirm
+  - action: utter_happy
+  - user: |
+      good bye
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: ask_anotherimage 2
+  steps:
+  - user: |
+      hey what's up
+    intent: greet
+  - action: utter_greet
+  - user: |
+      awful
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      show me a different animal
+    intent: another_animal
+  - action: action_random_image
+  - user: |
+      no
+    intent: deny
+  - action: utter_sorry
+  - user: |
+      bye
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: ask another image 3
+  steps:
+  - user: |
+      yo
+    intent: greet
+  - action: utter_greet
+  - user: |
+      terrible
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      Can you show me another animal?
+    intent: another_animal
+  - action: action_random_image
+  - user: |
+      yup
+    intent: affirm
+  - action: utter_happy
+  - user: |
+      thanks
+    intent: thank_you
+  - action: utter_welcome
+  - user: |
+      talk to you next time
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: ask favorite animal
+  steps:
+  - user: |
+      hi there
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+  - user: |
+      I'm bored
+    intent: lets_talk
+  - action: utter_favorite_animal
+  - user: |
+      [cats]{"entity": "animal", "value": "cat"} are my favourite animals
+    entities:
+    - animal: cat
+    intent: favorite_animal
+  - slot_was_set:
+    - animal: cat
+  - action: action_favorite_animal
+  - user: |
+      thanks
+    intent: thank_you
+  - action: utter_welcome
+  - user: |
+      talk to you later
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: ask favorite animal 2
+  steps:
+  - user: |
+      hi there
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+  - user: |
+      I'm bored
+    intent: lets_talk
+  - action: utter_favorite_animal
+  - user: |
+      I love [horses]{"entity": "animal", "value": "horse"}
+    entities:
+    - animal: horse
+    intent: favorite_animal
+  - slot_was_set:
+    - animal: horse
+  - action: action_favorite_animal
+  - user: |
+      thanks
+    intent: thank_you
+  - action: utter_welcome
+  - user: |
+      talk to you later
+    intent: goodbye
+  - action: utter_goodbye
+
+
+- story: saying 'sorry' 
+  steps:
+  - intent: greet
+    user: |-
+      hi
+  - action: utter_greet
+  - intent: mood_unhappy
+    user: |-
+      not well
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+    user: |-
+      nope
+  - action: utter_sorry
+
+
+- story: saying 'sorry' 2
+  steps:
+  - intent: greet
+    user: |-
+      Hello
+  - action: utter_greet
+  - intent: mood_unhappy
+    user: |-
+      not well
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+    user: |-
+      nope
+  - action: utter_sorry
+  - intent: goodbye
+    user: |-
+      bye
+  - action: utter_goodbye
+

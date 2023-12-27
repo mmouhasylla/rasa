@@ -1,0 +1,212 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hello
+    - Hi
+    - yo
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - by
+    - talk to you next time
+- intent: affirm
+  examples: |
+    - yes
+    - yep
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - a little
+    - yup
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am fine
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - good
+    - fine thanks
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - terrible
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so sad
+    - not well
+    - awful
+    - no well
+    - awfull
+    - I am not doing well
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: thank_you
+  examples: |
+    - thank you
+    - thanks
+    - thanks a lot
+    - many thanks
+    - thank you sir
+    - thx
+    - thanks mate
+    - thanks dude
+    - thanks man
+    - thanks a lot man
+    - thanks a lot homie
+    - thanks a lot sir
+- intent: change_image
+  examples: |
+    - I would like to see a [puppy]{"entity": "animal", "value": "dog"}
+    - I would like to see a [kitty](animal)
+    - I prefer to see a [turtle](animal)
+    - Do you have any pictures of [butterflies](animal)
+    - I want to see a [koala](animal)
+    - I want to see a [puppy](animal)
+    - I want to see a [horse](animal)
+    - I would like to see a [cat](animal)
+    - I want to see a [pony]{"entity": "animal", "value": "horse"}
+    - can you show me a [kangaroo](animal)
+    - Can you show me a [puppy]{"entity": "animal", "value": "dog"}?
+    - i would like to see a [pony]{"entity": "animal", "value": "horse"}
+    - i would like to see a [panda](animal)
+    - i would like to see a [cat](animal)
+    - i would like to see a kitty
+    - i would like to see a girafe
+    - i would like to see a [koala](animal)
+    - hello, i would like to see a [girafe](animal)
+- intent: favorite_animal
+  examples: |
+    - My favorite animal is a [puppy](animal)
+    - my fav animal is [dog]{"entity": "animal", "value": "puppy"}
+    - the [cat](animal) is my favorite animal
+    - [cats]{"entity": "animal", "value": "cat"} are my favorite animals
+    - [kangaroo](animal) is my favorite animal
+    - I like [kitties]{"entity": "animal", "value": "cat"}
+    - I love [horses]{"entity": "animal", "value": "horse"}
+    - I love [ponies]{"entity": "animal", "value": "horse"}
+    - my favorite animal is a [kangaroo](animal)
+    - my favorite animal is a [kitty]{"entity": "animal", "value": "cat"}
+    - [puppies]{"entity": "animal", "value": "dog"} are my favorite animal
+    - i love [dogs]{"entity": "animal", "value": "puppy"}
+    - My fav animal is [cat](animal)
+    - i like [ponies]{"entity": "animal", "value": "horse"}
+- intent: lets_talk
+  examples: |
+    - I would like to talk
+    - I want to talk
+    - I want to talk to you
+    - I'm bored
+    - I'm bored, let's talk
+    - let's talk
+    - let's have a chat
+    - let's chat
+    - lets talk
+    - lets talk i'm bored
+- intent: another_animal
+  examples: |
+    - I would like to see another animal
+    - I would like to see a different animal
+    - I want to see another animal
+    - I want to see a different animal
+    - show me another animal
+    - show me a different animal
+    - Do you have another animal to show?
+    - I want to see another picture
+    - Can you show me another animal?
+    - Can you show me another picture?
+    - another animal
+    - i would like to see another animal
+    - i would like to see a different animal
+    - i want to see another animal
+    - do you have another animal to show ?
+- synonym: puppy
+  examples: |
+    - dog
+    - dogs
+    - pup
+    - doggy
+    - puppies
+- synonym: horse
+  examples: |
+    - pony
+    - horses
+    - ponies
+- synonym: cat
+  examples: |
+    - cats
+    - kitties
+    - kitty
+    - kitten
+    - kittens
+    - meow
+    - catty
+- lookup: animal
+  examples: |
+    - puppy
+    - butterflies
+    - kangaroo
+    - elephant
+    - turtle
+    - giraffe
+    - girafe
+    - panda
+    - cat
+    - horse
