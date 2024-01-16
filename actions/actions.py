@@ -74,7 +74,6 @@ class ActionFavoriteAnimal(Action):
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         animal_type = next(tracker.get_latest_entity_values("animal"),None)
-        
         if not animal_type: 
              msg = f"They are really cute !"
              dispatcher.utter_message(text=msg)
